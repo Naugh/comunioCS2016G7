@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LytContenedor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#185d11"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:transitionGroup="false"
+    android:showDividers="beginning|end">
+
+    <ListView
+        android:layout_width="362dp"
+        android:layout_height="414dp"
+        android:id="@+id/lstJugadores"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5sp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cambiar a Suplente"
+                android:id="@+id/button_CambSupl"
+                android:layout_gravity="left" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Banquillo"
+                android:id="@+id/button_VerBanq"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:text="Vender"
+                android:id="@+id/vender"
+                android:layout_gravity="right" />
+
+
+        </TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/elegir"
+            android:textColor="#010000"
+            android:textSize="22dp"
+            android:textStyle="italic"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal" />
+
+
+    </LinearLayout>
+</LinearLayout>
+
