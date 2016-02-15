@@ -5,7 +5,9 @@ repositories{
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-
+    lintOptions {
+        abortOnError false
+    }
     defaultConfig {
         applicationId "grupo6.comunio"
         minSdkVersion 16
