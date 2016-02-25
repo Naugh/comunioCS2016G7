@@ -1,4 +1,10 @@
+plugins {
+  id 'net.researchgate.release' version '2.0.2'
+}
+
 apply plugin: 'com.android.application'
+apply plugin: 'maven'
+
 repositories{
     mavenCentral()
 }
@@ -24,8 +30,26 @@ android {
 }
 
 dependencies {
+    //classpath 'org.batcha.gradle.plugins:git-dependencies:0.1'   /*oscar*/
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.h2database:h2:1.4.191'
+    //compile('org.batcha:dummy-project-a:4.2').ext.git = 'https://github.com/Naugh/comunioCS2016G7.git'  /*oscar*/
 }
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            snapshotRepository(url: 'https://github.com/Naugh/comunioCS2016G7.git') {
+                authentication(userName: "OscarSanchezSanchez", password: "Oscar6757G")
+            }
+            repository(url: 'https://github.com/Naugh/comunioCS2016G7.git') {
+                authentication(userName: "OscarSanchezSanchez", password: "Oscar6757G")
+            }
+        }
+    }
+}
+
+createReleaseTag.dependsOn uploadArchives
+

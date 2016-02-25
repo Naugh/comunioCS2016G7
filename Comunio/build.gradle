@@ -5,7 +5,9 @@ buildscript {
         jcenter()
     }
     dependencies {
+
         classpath 'com.android.tools.build:gradle:1.3.0'
+        classpath 'com.palominolabs.gradle.task:gradle-git-clone-task:0.0.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -27,3 +29,11 @@ ext {
     buildToolsVersion = "19.0.1"
 }
 
+
+
+// use any task name you like
+task cloneSomeRepo(type: com.palominolabs.gradle.task.git.clone.GitCloneTask) {
+    dir = file("./prueba")
+    uri = 'https://github.com/Naugh/comunioCS2016G7.git'
+    treeish = 'origin/master' // a commit hash, or tag name, or branch name (with remote prefix, like 'origin/master')
+}
