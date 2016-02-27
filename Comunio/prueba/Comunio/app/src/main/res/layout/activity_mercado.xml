@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LytContenedor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#185d11"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ListView
+        android:layout_width="351dp"
+        android:layout_height="385dp"
+        android:id="@+id/lstJugadores"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/elegir"
+        android:textColor="#010000"
+        android:textSize="22dp"
+        android:textStyle="italic"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="263dp"
+        android:layout_height="wrap_content"
+        android:text="Fichar"
+        android:id="@+id/btnFichar"
+        android:background="#010101"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="18dp" />
+
+</LinearLayout>

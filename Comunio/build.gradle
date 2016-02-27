@@ -6,10 +6,17 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.3.0'
-
+       // classpath 'com.palominolabs.gradle.task:gradle-git-clone-task:0.0.2'
+        classpath'org.ajoberstar:gradle-git:1.4.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+}
+
+dependncies{
+    testCompile 'junit:junit:4.11'
+    testCompile"info.cukes:cucumber-junit:$cucumberVersion"
+    testCompile"info.cukes:cucumber-java:$cucumberVersion"
 }
 
 allprojects {
@@ -18,8 +25,79 @@ allprojects {
     }
 }
 
+task cucumber(){
+    dependsOn assemble, compileTestJava
+    doLast{
+        javaexec{
+            main="cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin','pretty','--glue','com.nuestroreposiorioGIt','nuestraPATH']
+        }
+    }
+}
+build.dependsOn cucumber
+
+task pushGradle{
+    doLast{
+        def i = 0
+        def encontrada = false;
+        def = Grgit.open(project.file('./repositorio'))
+        def ramas = rep.branch.list()
+
+        while((ramas.size()>i) && !(encontrada)){
+            if(ramas.get(i).getName() == "gradle"){
+                encontrada = true;
+            }
+            i++;
+        }
+        if (encontrada){
+            if(rep.branch.getCurrent().getName() == "gradle"){
+                rep.checkout(branch: 'master')
+                rep.branch.remove(names:['gradle'],force:true)
+            }else{
+                rep.branch.remove(names:['gradle'],force: true)
+            }
+            rep.checkout(branc: 'gradle')
+        }else{
+            rep.checkout(branch: 'gradle', createBranch: true)
+        }
+
+        rep.commit(message: 'Rama actualizada', all:true)
+        rep.push(force: true)
+
+        rep.checkout(branch:'master')
+    }
+}
+
+task createBranch{
+    doLast{
+        def rep = Grgit.open(project.file('./repositorio'))
+        rep.checkout(branch: 'gradle', createBranch: true)
+    }
+}
+
+task rmBranch{
+    doLast{
+        def rep = Grgit.open(project.file('./repositorio'))
+
+        if(rep.branch.getCurrent().getName() == "gradle"){
+            rep.checkout(branch: 'master')
+            rep.branch.remove(names: ['gradle'], fprint: true)
+        }else{
+            rep.branch.remove(names: ['gradle'], fprint: true)
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+task pull{
+    doLast{
+        def repositorio = Grgit.open(project.file('./repositorio'))
+        repositorio.pull()
+    }
 }
 
 ext {
@@ -27,3 +105,16 @@ ext {
     buildToolsVersion = "19.0.1"
 }
 
+// use any task name you like
+/*task cloneSomeRepo(type: com.palominolabs.gradle.task.git.clone.GitCloneTask) {
+    dir = file("./prueba")
+    uri = 'https://github.com/Naugh/comunioCS2016G7.git'
+    treeish = 'origin/master' // a commit hash, or tag name, or branch name (with remote prefix, like 'origin/master')
+}
+*/
+task pull{
+    doLast{
+        def repositorio = Grgit.openporject.file('./Comunio')
+        repositorio.pull()
+    }
+}

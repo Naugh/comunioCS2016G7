@@ -28,6 +28,4 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.h2database:h2:1.4.191'
-    //classpath 'org.batcha.gradle.plugins:git-dependecies:0.1'
-    //compile('org.batcha:dummy-project-a:4.2').ext.git='https://github.com/Naugh/comunioCS2016G7.git'
 }

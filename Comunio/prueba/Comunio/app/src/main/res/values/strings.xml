@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Comunio</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="bienvenida">Bienvenido a Comunio</string>
+    <string name="usuario">Usuario:</string>
+    <string name="contraseña">Contraseña:</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="registrar">No tengo cuenta</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_registrar">Registro</string>
+    <string name="title_activity_mercado">Mercado</string>
+    <string name="title_activity_noticias">Comentarios</string>
+    <string name="title_activity_clasificacion">Clasificacion</string>
+    <string name="title_activity_plantilla">Titulares</string>
+    <string name="title_activity_noticias2">Noticias oficiales</string>
+    <string name="title_activity_suplentes">Suplentes</string>
+</resources>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="grupo6.comunio.NoticiasActivity"
+    android:background="#185d11">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tvNoticias"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:padding="5sp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNoticia"
+            android:layout_weight="1"
+            android:text="Escribe aquí tu noticia..."
+            android:editable="true"
+            android:elegantTextHeight="false"
+            android:textSize="20sp"
+            android:autoText="false"
+            android:gravity="left"
+            android:background="#2ead21"
+            android:inputType="text"
+            android:padding="10sp"
+            android:scrollbars = "vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:singleLine="true"
+            />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver noticias oficiales"
+                android:id="@+id/btOficial"
+                android:layout_gravity="left" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Publicar noticia"
+                android:id="@+id/btPublicar"
+                android:layout_gravity="right" />
+
+
+        </TableRow>
+
+
+    </LinearLayout>
+
+</LinearLayout>

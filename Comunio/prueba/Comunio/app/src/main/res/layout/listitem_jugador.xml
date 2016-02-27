@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="#ffffff">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:weightSum="1">
+
+        <TableLayout
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/nombre"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:text="Cristiano Ronaldo"
+                android:textColor="#010000" />
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="169dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/equipo"
+                android:textSize="10sp"
+                android:textStyle="italic"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Real Madrid"
+                android:textColor="#010000" />
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="103dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/posicion"
+                android:textSize="10dp"
+                android:textStyle="italic"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="Delantero"
+                android:textColor="#010000" />
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/valor"
+                android:textSize="12dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="96 M"
+                android:textColor="#010000"
+                android:textStyle="bold" />
+        </TableLayout>
+
+    </TableRow>
+
+</LinearLayout>
